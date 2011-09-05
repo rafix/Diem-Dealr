@@ -1,0 +1,39 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Model
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: model
+    with_doctrine_route: false
+    i18n_catalogue: dm
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=name'
+          - make_id
+          - trims_list
+          - description
+        sort:
+          - name
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - name
+          - make_id
+          - description
+      form:
+        display:
+          NONE: [name, make_id]
+          Trims: [trims_list]
+          Others: [description]
+        class: ModelAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

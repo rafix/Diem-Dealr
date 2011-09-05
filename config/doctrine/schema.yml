@@ -1,0 +1,112 @@
+Make:
+  actAs:
+    i18n:
+      fields: [description]
+  columns:
+    name: {type: string(32), notnull: true}
+    logo: {type: integer, notnull: false}
+    description: {type: string(2000), extra: markdown}
+  relations:
+    Logo:
+      class: DmMedia
+      local: logo
+      onDelete: SET NULL
+
+Model:
+  actAs:
+    i18n:
+      fields: [description]
+  columns:
+    name: {type: string(32), notnull: true}
+    make_id: {type: integer, notnull: true}
+    description: {type: string(2000)}
+  relations:
+    Make:
+      class: Make
+      local: make_id
+      foreignAlias: Models
+      onDelete: RESTRICT
+
+Trims:
+  actAs:
+    i18n:
+      fields: [description]
+  columns:
+    name: {type: string(32), notnull: true}
+    model_id: {type: integer, notnull: true}
+    doors: {type: integer(1)}
+    transmission: {type: string(32)}
+    engine: {type: string(32)}
+    drive_type: {type: string(32)}
+    fuel_type: {type: string(32)}
+    body_style: {type: enum, values: [Convertible, Coupe, Hatchback, Sedan, SUV, Truck, Wagon]}
+    description: {type: string(2000)}
+  relations:
+    Model:
+      class: Model
+      local: model_id
+      foreignAlias: Trims
+      onDelete: RESTRICT
+
+Car:
+  actAs:
+    i18n:
+      fields: [description]
+  columns:
+    stock_no: {type: string(16), notnull: true, unique: true}
+    trim_id: {type: integer, notnull: true}
+    vin: {type: integer(16), notnull: true, unique: true}
+    car_type: {type: enum, values: [New, Certified, Used]}
+    mileage: {type: string(32)}
+    interior_color: {type: string(16)}
+    exterior_color: {type: string(16)}
+    price: {type: decimal}
+    image: {type: integer, notnull: true}
+    description: {type: string(2000)}
+  relations:
+    Image:
+      class: DmMedia
+      local: image
+      onDelete: RESTRICT
+    Trim:
+      class: Trim
+      local: trim_id
+      foreignAlias: Cars
+      onDelete: RESTRICT
+
+Category:
+  actAs:
+    Timestampable: 
+    i18n:
+      fields: [name, description]
+    NestedSet:
+      hasManyRoots: true
+      rootColumnName: root_id
+  columns:
+    name: {type: string(32), notnull: true}
+    is_active: { type: boolean, notnull: true, default: true }
+    description: {type: string(255)}
+
+Article:
+  actAs:
+    Timestampable:
+    DmVersionable:
+    DmBlameable:
+    i18n:
+      fields: [title, content]
+  columns:
+    title: {type: string(32), notnull: true}
+    category_id: {type: integer, notnull: true}
+    content: {type: clob, extra: markdown}
+    image: {type: integer, notnull: false}
+    is_active: { type: boolean, notnull: true, default: true }
+  relations:
+    Image:
+      class: DmMedia
+      local: image
+      onDelete: SET NULL
+    Category:
+      class: Category
+      local: category_id
+      foreignAlias: Articles
+      onDelete: CASCADE

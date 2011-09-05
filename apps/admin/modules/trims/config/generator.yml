@@ -1,0 +1,49 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Trims
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: trims
+    with_doctrine_route: false
+    i18n_catalogue: dm
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=name'
+          - model_id
+          - doors
+          - transmission
+          - engine
+          - drive_type
+          - fuel_type
+          - body_style
+          - description
+        sort:
+          - name
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - name
+          - model_id
+          - doors
+          - transmission
+          - engine
+          - drive_type
+          - fuel_type
+          - body_style
+          - description
+      form:
+        display:
+          NONE: [name, model_id]
+          Others: [doors, transmission, engine, drive_type, fuel_type, body_style, description]
+        class: TrimsAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

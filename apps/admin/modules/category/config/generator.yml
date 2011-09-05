@@ -1,0 +1,47 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Category
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: category
+    with_doctrine_route: false
+    i18n_catalogue: dm
+    config:
+      actions: ~
+      fields:
+        is_active:
+          label: Active
+      list:
+        display:
+          - '=name'
+          - nested_set_indented_name
+          - nested_set_parent
+          - articles_list
+          - is_active
+          - description
+          - created_at
+          - updated_at
+        sort:
+          - created_at
+          - desc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: true
+      filter:
+        display:
+          - name
+          - is_active
+          - description
+          - created_at
+          - updated_at
+      form:
+        display:
+          NONE: [name, is_active, nested_set_parent_id]
+          Articles: [articles_list]
+          Others: [description]
+        class: CategoryAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

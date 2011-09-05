@@ -1,0 +1,53 @@
+generator:
+  class: dmAdminDoctrineGenerator
+  param:
+    model_class: Car
+    theme: dmAdmin
+    non_verbose_templates: true
+    with_show: false
+    route_prefix: car
+    with_doctrine_route: false
+    i18n_catalogue: dm
+    config:
+      actions: ~
+      fields: {  }
+      list:
+        display:
+          - '=id'
+          - image
+          - stock_no
+          - trim_id
+          - vin
+          - car_type
+          - mileage
+          - interior_color
+          - exterior_color
+          - price
+          - description
+        sort:
+          - id
+          - asc
+        table_method: getAdminListQuery
+        table_count_method: ~
+        sortable: false
+      filter:
+        display:
+          - id
+          - stock_no
+          - trim_id
+          - vin
+          - car_type
+          - mileage
+          - interior_color
+          - exterior_color
+          - price
+          - image
+          - description
+      form:
+        display:
+          Image: [image_form, image_view]
+          Others: [stock_no, trim_id, vin, car_type, mileage, interior_color, exterior_color, price, description]
+        class: CarAdminForm
+        fields: {  }
+      edit: ~
+      new: ~

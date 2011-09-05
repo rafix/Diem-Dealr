@@ -1,0 +1,47 @@
+Content:
+
+  Global:
+  
+    main:                   # the main module is required, and must not be removed.
+      components:
+        header:
+        footer:
+    
+  Inventory:
+    
+    make:
+      components:
+        list:
+        show:
+        form:
+    
+    model:
+      components:
+        list:
+        show:
+        form:
+    
+    trims:
+      components:
+        list:
+        show:
+        form:
+    
+    car:
+      components:
+        list:
+        show:
+        form:
+  
+  Blog:
+    
+    category:
+      components:
+        list:
+        show:
+    
+    article:
+      components:
+        list:
+        show:
+        form:
