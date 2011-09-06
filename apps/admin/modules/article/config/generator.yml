@@ -43,9 +43,10 @@ generator:
           - updated_by
       form:
         display:
-          NONE: [title, is_active, category_id, created_by, updated_by]
+          NONE: [title, is_active, category_id, tags]
           Image: [image_form, image_view]
           Content: [content]
+          Authors: [created_by, updated_by]
         class: ArticleAdminForm
         fields: {  }
       edit: ~

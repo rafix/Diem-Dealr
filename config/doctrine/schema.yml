@@ -92,6 +92,7 @@ Article:
     Timestampable:
     DmVersionable:
     DmBlameable:
+    DmTaggable:
     I18n:
       fields: [title, content]
   columns:

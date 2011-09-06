@@ -10,24 +10,32 @@ Content:
   Inventory:
     
     make:
+      name: Make|Makers
+      page: true
       components:
         list:
         show:
         form:
     
     model:
+      name: Model|Models
+      page: true
       components:
         list:
         show:
         form:
     
     trims:
+      name: Trim|Trims
+      page: true
       components:
         list:
         show:
         form:
     
     car:
+      name: Car|Cars
+      page: true
       components:
         list:
         show:
@@ -36,11 +44,14 @@ Content:
   Blog:
     
     category:
+      name: Category|Categories
       components:
         list:
         show:
     
     article:
+      name: Article|Articles
+      page: true
       components:
         list:
         show:
