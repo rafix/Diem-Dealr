@@ -16,7 +16,7 @@ generator:
           - '=id'
           - image
           - stock_no
-          - trim_id
+          - trims_id
           - vin
           - car_type
           - mileage
@@ -34,7 +34,7 @@ generator:
         display:
           - id
           - stock_no
-          - trim_id
+          - trims_id
           - vin
           - car_type
           - mileage
@@ -45,8 +45,9 @@ generator:
           - description
       form:
         display:
+          NONE: [stock_no, vin, make_id, model_id, trims_id, car_type, mileage, interior_color, exterior_color, price]
           Image: [image_form, image_view]
-          Others: [stock_no, trim_id, vin, car_type, mileage, interior_color, exterior_color, price, description]
+          Description: [description]
         class: CarAdminForm
         fields: {  }
       edit: ~

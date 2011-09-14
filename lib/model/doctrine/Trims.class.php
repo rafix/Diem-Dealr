@@ -12,5 +12,8 @@
  */
 class Trims extends BaseTrims
 {
-
+    public function __toString() 
+    {
+        //return sprintf('%s/%s/%s', $this->getModel()->getMake(), $this->getModel(), $this->getName());
+    }   
 }
