@@ -41,8 +41,8 @@ generator:
           - description
       form:
         display:
-          NONE: [name, model_id]
-          Others: [doors, transmission, engine, drive_type, fuel_type, body_style, description]
+          NONE: [name, make_id, model_id, doors, transmission, engine, drive_type, fuel_type, body_style]
+          Description: [description]
         class: TrimsAdminForm
         fields: {  }
       edit: ~
