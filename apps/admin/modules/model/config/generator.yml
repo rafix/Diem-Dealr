@@ -32,7 +32,7 @@ generator:
         display:
           NONE: [name, make_id]
           Trims: [trims_list]
-          Others: [description]
+          Description: [description]
         class: ModelAdminForm
         fields: {  }
       edit: ~

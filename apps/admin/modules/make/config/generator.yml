@@ -33,7 +33,7 @@ generator:
           NONE: [name]
           Logo: [logo_form, logo_view]
           Models: [models_list]
-          Others: [description]
+          Description: [description]
         class: MakeAdminForm
         fields: {  }
       edit: ~
