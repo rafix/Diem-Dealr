@@ -7,7 +7,7 @@
  * @subpackage trims
  * @author     Your name here
  */
-class TrimsAdminForm extends BaseTrimsForm
+class TrimAdminForm extends BaseTrimForm
 {
   public function configure()
   {

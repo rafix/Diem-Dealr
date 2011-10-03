@@ -27,7 +27,8 @@ Model:
       foreignAlias: Models
       onDelete: RESTRICT
 
-Trims:
+Trim:
+  tableName: trims
   actAs:
     I18n:
       fields: [description]
@@ -61,7 +62,7 @@ Car:
     interior_color: {type: string(16)}
     exterior_color: {type: string(16)}
     price: {type: decimal}
-    image: {type: integer, notnull: true}
+    image: {type: integer, notnull: false}
     description: {type: string(2000)}
   relations:
     Image:

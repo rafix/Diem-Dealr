@@ -1,11 +1,11 @@
 generator:
   class: dmAdminDoctrineGenerator
   param:
-    model_class: Trims
+    model_class: Trim
     theme: dmAdmin
     non_verbose_templates: true
     with_show: false
-    route_prefix: trims
+    route_prefix: trim
     with_doctrine_route: false
     i18n_catalogue: dm
     config:
@@ -43,7 +43,7 @@ generator:
         display:
           NONE: [name, make_id, model_id, doors, transmission, engine, drive_type, fuel_type, body_style]
           Description: [description]
-        class: TrimsAdminForm
+        class: TrimAdminForm
         fields: {  }
       edit: ~
       new: ~

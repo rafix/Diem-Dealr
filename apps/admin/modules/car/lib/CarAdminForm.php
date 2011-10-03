@@ -28,8 +28,8 @@ class CarAdminForm extends BaseCarForm
         'cache' => true,
     ));
     
-    $this->widgetSchema['trims_id'] = new sfWidgetFormDoctrineDependentSelect(array(
-        'model' => 'Trims',
+    $this->widgetSchema['trim_id'] = new sfWidgetFormDoctrineDependentSelect(array(
+        'model' => 'Trim',
         'depends' => 'Model',
         'add_empty' => 'Select one Trim',
         'ajax'      => true,
@@ -37,7 +37,7 @@ class CarAdminForm extends BaseCarForm
     ));
     
     $this->widgetSchema->moveField('model_id', 'after', 'make_id');
-    $this->widgetSchema->moveField('trims_id', 'after', 'model_id');
+    $this->widgetSchema->moveField('trim_id', 'after', 'model_id');
     
     $this->validatorSchema['make_id'] = new sfValidatorDoctrineChoice(array(
         'model' => 'Make',
@@ -47,8 +47,8 @@ class CarAdminForm extends BaseCarForm
         'model' => 'Model',
     ));
     
-    $this->validatorSchema['trims_id'] = new sfValidatorDoctrineChoice(array(
-        'model' => 'Trims',
+    $this->validatorSchema['trim_id'] = new sfValidatorDoctrineChoice(array(
+        'model' => 'Trim',
     ));
   }
 }

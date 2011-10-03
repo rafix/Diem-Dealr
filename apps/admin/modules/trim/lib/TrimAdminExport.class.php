@@ -7,6 +7,6 @@
  * @subpackage trims
  * @author     Your name here
  */
-class TrimsAdminExport extends myDoctrineTableExport
+class TrimAdminExport extends myDoctrineTableExport
 {
 }

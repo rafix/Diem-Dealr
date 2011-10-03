@@ -1,14 +1,14 @@
 <?php
 
 /**
- * TrimsTranslation filter form.
+ * Trim filter form.
  *
  * @package    diem-dealr
  * @subpackage filter
- * @author     Your name here
+ * @author     Rafix
  * @version    SVN: $Id: sfDoctrineFormFilterTemplate.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class TrimsTranslationFormFilter extends BaseTrimsTranslationFormFilter
+class TrimFormFilter extends BaseTrimFormFilter
 {
   public function configure()
   {
