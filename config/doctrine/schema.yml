@@ -56,7 +56,7 @@ Car:
   columns:
     stock_no: {type: string(16), notnull: true, unique: true}
     trim_id: {type: integer, notnull: true}
-    vin: {type: integer(16), notnull: true, unique: true}
+    vin: {type: string(16), notnull: true, unique: true}
     car_type: {type: enum, values: [New, Certified, Used]}
     mileage: {type: string(32)}
     interior_color: {type: string(16)}
